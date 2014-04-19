@@ -1,0 +1,28 @@
+
+<script>
+	function buyitNow() {
+		$("#panel_WishList").hide();
+		$("#panel_BuyItNow").load('buyItNow.html');
+		$("#panel_BuyItNow").show();
+	}
+</script>
+
+
+<fieldset data-role="controlgroup">
+	<legend>WISH LIST:</legend>
+
+	<input type="checkbox" name="checkbox-0 " checked value="8.69" />30
+	Pencils - $8.69 <br>
+	<input type="checkbox" name="checkbox-0 " checked />30 Notebooks -
+	$12.43 <br>
+	<input type="checkbox" name="checkbox-0 " checked />10 Paper Blocks -
+	$25.34 <br>
+	<input type="checkbox" name="checkbox-0 " checked />30 Erasers - $5.99
+	<br>
+	<input type="checkbox" name="checkbox-0 " checked />10 Sharpeners -
+	$8.33
+
+</fieldset>
+
+<button class="ui-btn ui-corner-all" onclick="buyitNow()">Buy
+	Items Now - $36.87</button>

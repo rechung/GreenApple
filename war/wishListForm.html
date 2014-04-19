@@ -1,0 +1,38 @@
+
+<script>
+	function saveWishList() {
+
+		var saveWishListUrl = "saveWishList" + "?teacherNameSchoolAndClass="
+				+ encodeURIComponent(getUrlParameter("teacher"))
+				+ "&teacherEmail="
+				+ encodeURIComponent(getUrlParameter("teacherEmail"))
+				+ "&itemName=" + encodeURIComponent($("#supplyName").val())
+				+ "&itemLink=" + encodeURIComponent($("#supplyLink").val())
+				+ "&itemUnitPrice=" + encodeURIComponent($("#unitPrice").val())
+				+ "&itemQuantity="
+				+ encodeURIComponent($("#itemQuantity").val());
+
+		$.post(saveWishListUrl, {}, function(data, status) {
+
+			alert('Item saved on your Wish List. Thank you!');
+
+		});
+	}
+</script>
+
+<br>
+<input type="text" id="itemQuantity" placeholder="Quantity" />
+<br>
+<input type="text" id="supplyName" placeholder="Supply Name" />
+<br>
+<input type="text" id="supplyLink" placeholder="Link to your supply" />
+<br>
+US$
+<input type="text" id="unitPrice" placeholder="Price per unit" />
+<br>
+<br>
+<label>Total for this item = $36.89</label>
+<button class="ui-btn" onclick='saveWishList()'>Add this item
+	to your Wish List</button>
+
+
