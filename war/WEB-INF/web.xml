@@ -12,6 +12,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>GreenApple</servlet-name>
 		<url-pattern>/greenapple</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>wishList</servlet-name>
+		<servlet-class>co.greenapple.WishListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wishList</servlet-name>
+		<url-pattern>/wishList</url-pattern>
+	</servlet-mapping>
+	
 
 	<servlet>
 		<servlet-name>saveWishList</servlet-name>

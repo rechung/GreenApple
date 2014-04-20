@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Green Apple</title>
+<title>GREEN APPLE MOBILE APP</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script
 	src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+<script src="javascript/utilities.js"></script>
+<script src="javascript/wishList.js"></script>
 </head>
 
 <body>
 
-	<div data-role="header">
-		<h1>GREEN APPLE</h1>
-	</div>
+<img src="GreenAppleLogo.jpg" align="middle">
 
 	<div id="panel_header"></div>
 
@@ -26,54 +27,5 @@
 
 	<div id="panel_wishListForm"></div>
 
-	<script>
-		function getUrlParameter(urlParameterName) {
-			if (urlParameterName = (new RegExp('[?&]'
-					+ encodeURIComponent(urlParameterName) + '=([^&]*)'))
-					.exec(location.search))
-				return decodeURIComponent(urlParameterName[1]);
-		}
-
-		$(document)
-				.on(
-						"pageinit",
-						function(event) {
-
-							$("#panel_WishList").hide();
-							$("#panel_WishListOtherTeachers").hide();
-							$("#panel_BuyItNow").hide();
-							$("#panel_wishListForm").hide();
-							$("#panel_WishListOtherTeachers").load(
-									'wishListOtherTeachers.html');
-
-							if (getUrlParameter('teacher') != null
-									&& getUrlParameter('teacher') != '') {
-								$("#panel_header").html(
-										'<label>Teacher: '
-												+ getUrlParameter('teacher')
-												+ '</label>');
-							} else {
-								$("#panel_header")
-										.html(
-												'<input id="filter-for-listview" data-type="search"' +
-							'placeholder="Search for Teachers..." />');
-								$("#panel_WishListOtherTeachers").show();
-							}
-
-							if (getUrlParameter('form') == 'true') {
-								$("#panel_wishListForm").load(
-										'wishListForm.html');
-								$("#panel_wishListForm").show();
-							} else {
-
-								if (getUrlParameter('teacher') != null
-										&& getUrlParameter('teacher') != '') {
-									$("#panel_WishList").load('wishlist.html');
-									$("#panel_WishList").show();
-								}
-								$("#panel_WishListOtherTeachers").show();
-							}
-						});
-	</script>
 </body>
 </html>
